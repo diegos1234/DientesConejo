@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Conejo Completo</title>
+</head>
+<body>
+	<canvas id="miLienzo"></canvas>
+</body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+<script>
+	var codigoDePrograma = function(instanciaProcessing) {
+		with (instanciaProcessing) {
+			size(400, 400);
+
+			// Fondo
+			background(255, 255, 255); // Blanco
+
+			// Orejas
+			fill(200, 200, 200); // Gris claro para las orejas
+			noStroke();
+			ellipse(150, 90, 50, 100); // Oreja izquierda
+			ellipse(250, 90, 50, 100); // Oreja derecha
+
+			// Parte interna de las orejas
+			fill(255, 192, 203); // Rosa claro
+			ellipse(150, 90, 30, 70); // Parte interna de la oreja izquierda
+			ellipse(250, 90, 30, 70); // Parte interna de la oreja derecha
+
+			// Cabeza del conejo
+			fill(200, 200, 200); // Gris claro para la cabeza
+			noStroke();
+			ellipse(200, 200, 150, 150); // Cabeza del conejo
+
+			// Ojos del conejo
+			fill(255); // Blanco para los ojos
+			stroke(0); // Borde negro
+			strokeWeight(2);
+			ellipse(170, 180, 30, 40); // Ojo izquierdo
+			ellipse(230, 180, 30, 40); // Ojo derecho
+
+			// Pupilas
+			fill(0); // Negro para las pupilas
+			noStroke();
+			ellipse(170, 180, 10, 10); // Pupila izquierda
+			ellipse(230, 180, 10, 10); // Pupila derecha
+
+			// Nariz del conejo
+			fill(255, 192, 203); // Color rosa para la nariz
+			noStroke();
+			triangle(185, 220, 215, 220, 200, 235); // Triángulo para la nariz
+
+			// Dientes de conejo
+			fill(255); // Blanco para los dientes
+			stroke(0); // Borde negro
+			strokeWeight(2);
+			rect(180, 240, 15, 40); // Diente izquierdo
+			rect(205, 240, 15, 40); // Diente derecho
+
+			// Detalle entre los dientes
+			stroke(0);
+			line(195, 240, 195, 280); // Línea entre los dientes
+		}
+	};
+
+	var canvas = document.getElementById("miLienzo");
+	var instancia = new Processing(canvas, codigoDePrograma);
+</script>
+</html>
+
